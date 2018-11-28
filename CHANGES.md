@@ -1,10 +1,20 @@
 # Changes
 
+## [0.8.0] - 2019-xx-xx
+
+## Changed
+
+* `StaticFiles` configuration is moved to `StaticFileConfig` completely.
+
 ## [x.x.xx] - xxxx-xx-xx
 
 ### Added
 
 * Add `from_file` and `from_file_with_config` to `NamedFile` to allow sending files without a known path. #670
+
+### Changed
+
+* `StaticFiles` no longer redirects to index file and instead attempts to return its content
 
 ## [0.7.18] - 2019-01-10
 
@@ -41,7 +51,6 @@
 * Implement `FromRequest` extractor for `Either<A,B>`
 
 * Implement `ResponseError` for `SendError`
-
 
 ## [0.7.15] - 2018-12-05
 
