@@ -16,8 +16,6 @@
 
 * `StaticFiles` no longer redirects to index file and instead attempts to return its content
 
-## [0.7.18] - 2019-01-10
-
 ### Added
 
 * Add `with_cookie` for `TestRequest` to allow users to customize request cookie. #647
