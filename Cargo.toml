@@ -1,7 +1,7 @@
 [package]
-name = "actix-web"
-version = "2.0.0"
-authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
+name = "actix-web-octopus"
+version = "2.0.1"
+authors = ["Frank Fang <fangyuhao@gmail.com>"]
 description = "Actix web is a simple, pragmatic and extremely fast web framework for Rust."
 readme = "README.md"
 keywords = ["actix", "http", "web", "framework", "async"]

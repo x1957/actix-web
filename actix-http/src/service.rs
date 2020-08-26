@@ -184,6 +184,7 @@ where
         InitError = (),
     > {
         pipeline_factory(|io: TcpStream| {
+            io.set_nodelay(true);
             let peer_addr = io.peer_addr().ok();
             ok((io, Protocol::Http1, peer_addr))
         })
