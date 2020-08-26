@@ -255,6 +255,10 @@ where
                 );
 
                 HttpService::build()
+                    .on_connect(|io :&actix_rt::net::TcpStream| {
+                        io.set_nodelay(true);
+                        123
+                    })
                     .keep_alive(c.keep_alive)
                     .client_timeout(c.client_timeout)
                     .local_addr(addr)
