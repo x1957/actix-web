@@ -236,6 +236,7 @@ mod openssl {
                     .map_init_err(|_| panic!()),
             )
             .and_then(|io: SslStream<TcpStream>| {
+                io.set_nodelay(true);
                 let proto = if let Some(protos) = io.ssl().selected_alpn_protocol() {
                     if protos.windows(2).any(|window| window == b"h2") {
                         Protocol::Http2
@@ -301,6 +302,7 @@ mod rustls {
                     .map_init_err(|_| panic!()),
             )
             .and_then(|io: TlsStream<TcpStream>| {
+                io.set_nodelay(true);
                 let proto = if let Some(protos) = io.get_ref().1.get_alpn_protocol() {
                     if protos.windows(2).any(|window| window == b"h2") {
                         Protocol::Http2
